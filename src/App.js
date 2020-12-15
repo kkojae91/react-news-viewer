@@ -14,11 +14,7 @@ function App() {
       console.log(error);
     }
   };
-  return (
-    <div>
-      <NewsList />
-    </div>
-  );
+  return <NewsList />;
 }
 
 export default App;

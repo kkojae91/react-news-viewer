@@ -24,6 +24,8 @@ const NewsItemBlock = styled.div`
       line-height: 1.5;
       margin-top: 0.5rem;
       white-space: normal;
+      font-size: 1rem;
+      font-weight: 400;
     }
   }
   & + & {
