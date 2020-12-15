@@ -24,10 +24,11 @@ const NewsList = ({ category }) => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
+        console.log(category);
+        const query = category === 'all' ? '' : `&category=${category}`;
         const response = await axios.get(
-          'http://newsapi.org/v2/top-headlines?country=kr&apiKey=a0de237571414b3db6b0b6763b28c845',
+          `http://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=a0de237571414b3db6b0b6763b28c845`,
         );
-        // console.log(response.data.articles);
         setArticles(response.data.articles);
       } catch (error) {
         console.log(error);
@@ -35,7 +36,7 @@ const NewsList = ({ category }) => {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [category]);
 
   // loading 중일땐 아래의 코드를 실행.
   if (isLoading) {
